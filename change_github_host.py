@@ -10,6 +10,8 @@ def search_host_file():
     for disk in ["C", "D", "E"]:
         if os.path.exists(disk + ":\Windows\System32\drivers\etc\hosts"):
             host_file = disk + ":\Windows\System32\drivers\etc\hosts"
+    if len(host_file) == 0:
+        raise Exception("没有找到host文件")
 
 
 def get_ip(domain):
